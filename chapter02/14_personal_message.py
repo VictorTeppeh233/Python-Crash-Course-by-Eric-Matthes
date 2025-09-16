@@ -1,4 +1,4 @@
-#Assignment 2.3
+#Assignment 2-3
 
 #Use a variable to represent a person’s name, and print a message to that person.
 
