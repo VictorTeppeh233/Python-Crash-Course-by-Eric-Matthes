@@ -12,5 +12,6 @@ def make_shirt(size, message):
     print(f'Size: {size}')
     print(f'Message: {message.upper()}.')
 
-make_shirt(18, 'hacktoberfest 2026')
-make_shirt(size=25, message='I love Ghana')
+# calling the function
+make_shirt('medium', 'hacktoberfest 2026')
+make_shirt(size='large', message='I love Ghana')
