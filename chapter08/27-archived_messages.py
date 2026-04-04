@@ -1,3 +1,5 @@
+# assignment 8.11
+
 # Initial list of messages and empty list to store sent messages
 short_messages = [
     'I love Ghana.',
