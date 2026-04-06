@@ -29,7 +29,7 @@ class User:
         """Print personalized greeting to the user"""
         print(f"Welcome {self.first_name.title()}, we are glad to have you join us.")
 
-#calling the function
+#initialize the class
 user_1 = User("albert", "einstein", "ealbert@gmail.com", "e_albert")
 user_2 = User("john", "doe", "jdoe@gmail.com", "jdoe")
 
