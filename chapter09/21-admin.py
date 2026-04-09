@@ -1,14 +1,14 @@
-# assignment 9.5
+# assignment 9.7
 
 """
-Add an attribute called login_attempts to your User class from Exercise 9-3 (page 162). 
-Write a method called increment_login_attempts() that increments the value of login_attempts by 1. 
-Write another method called reset_login_attempts() that resets the value of login_attempts to 0.
-Make an instance of the User class and call increment_login_attempts() several times. 
-Print the value of login_attempts to make sure it was incremented properly, 
-and then call reset_login_attempts(). Print login_attempts again to make sure it was reset to 0.
-"""
+An administrator is a special kind of user. 
+Write a class called Admin that inherits from the User class you wrote in 
+Exercise 9-3 (page 162) or Exercise 9-5 (page 167). 
+Add an attribute, privileges, that stores a list of strings like "can add post", "can delete post", "can ban user", and so on.
+Write a method called show_privileges() that lists the administrator’s set of privileges. 
+Create an instance of Admin, and call your method.
 
+"""
 #creating the class
 class User:
     """Stores details of the User"""
@@ -44,19 +44,20 @@ class User:
         """Prints the login attempts"""
         print(self.login_attempts)
 
+#creating the child class
+class Admin(User):
+    """Creating the child class"""
+    def __init__(self, first_name, last_name, email, user_name, login_attempts):
+        """Allowing the child class to use the parents methods"""
+        super().__init__(first_name, last_name, email, user_name, login_attempts)
+        self.priviledges = ["can add user", "can delete user", "can ban user"]
 
-#initialize the class
-user_1 = User("albert", "einstein", "ealbert@gmail.com", "e_albert", 0)
-user_2 = User("john", "doe", "jdoe@gmail.com", "jdoe", 3)
+    def show_priviledges(self):
+        """Showing the priviledges of Admin"""
+        for item in self.priviledges:
+            print(f"Admin {item}.")
 
-#printing the login attempts
-user_1.print_login_attempts()
-
-#increase the attempts by 1
-user_1.increment_login_attempts()
-#print the login attempts
-user_1.print_login_attempts()
-#reset the login attempts
-user_1.reset_login_attempts()
-#print the login attempts
-user_1.print_login_attempts()
+#instantiate the class
+user_1 = Admin('albert', 'einstein', 'aeinstein@gmail.com', 'aeinstein', '3')
+#calling a method in the child clas
+user_1.show_priviledges()
