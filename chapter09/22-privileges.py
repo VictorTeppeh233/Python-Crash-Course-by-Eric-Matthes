@@ -43,14 +43,14 @@ class User:
         """Prints the login attempts"""
         print(self.login_attempts)
 
-class Priviledges:
-    """This is for the priviledges of users."""
+class Privileges:
+    """This is for the privileges of users."""
     def __init__(self):
-        self.priviledges = ["can add user", "can delete user", "can ban user"]
-    """This shows the priviledges of an admin"""
-    def show_priviledges(self):
-        """Showing the priviledges of Admin"""
-        for item in self.priviledges:
+        self.privileges = ["can add user", "can delete user", "can ban user"]
+    """This shows the privileges of an admin"""
+    def show_privileges(self):
+        """Showing the privileges of Admin"""
+        for item in self.privileges:
             print(f"Admin {item}.")
 
 
@@ -60,9 +60,9 @@ class Admin(User):
     def __init__(self, first_name, last_name, email, user_name, login_attempts):
         """Allowing the child class to use the parents methods"""
         super().__init__(first_name, last_name, email, user_name, login_attempts)
-        self.priviledges = Priviledges()
+        self.privileges = Privileges()
 
 #instantiate the class
 user_1 = Admin('albert', 'einstein', 'aeinstein@gmail.com', 'aeinstein', '3')
 #calling a method in the child clas
-user_1.priviledges.show_priviledges()
+user_1.privileges.show_privileges()

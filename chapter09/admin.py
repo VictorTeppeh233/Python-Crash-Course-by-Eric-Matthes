@@ -1,15 +1,3 @@
-# assignment 9.7
-
-"""
-An administrator is a special kind of user. 
-Write a class called Admin that inherits from the User class you wrote in 
-Exercise 9-3 (page 162) or Exercise 9-5 (page 167). 
-Add an attribute, privileges, that stores a list of strings like "can add post", "can delete post", "can ban user", and so on.
-Write a method called show_privileges() that lists the administrator’s set of privileges. 
-Create an instance of Admin, and call your method.
-
-"""
-#creating the class
 class User:
     """Stores details of the User"""
     def __init__(self, first_name, last_name, email, user_name, login_attempts):
@@ -44,20 +32,21 @@ class User:
         """Prints the login attempts"""
         print(self.login_attempts)
 
+class Privileges:
+    """This is for the privileges of users."""
+    def __init__(self):
+        self.privileges = ["can add user", "can delete user", "can ban user"]
+    """This shows the privileges of an admin"""
+    def show_privileges(self):
+        """Showing the privileges of Admin"""
+        for item in self.privileges:
+            print(f"Admin {item}.")
+
+
 #creating the child class
 class Admin(User):
     """Creating the child class"""
     def __init__(self, first_name, last_name, email, user_name, login_attempts):
         """Allowing the child class to use the parents methods"""
         super().__init__(first_name, last_name, email, user_name, login_attempts)
-        self.privileges = ["can add user", "can delete user", "can ban user"]
-
-    def show_privileges(self):
-        """Showing the privileges of Admin"""
-        for item in self.privileges:
-            print(f"Admin {item}.")
-
-#instantiate the class
-user_1 = Admin('albert', 'einstein', 'aeinstein@gmail.com', 'aeinstein', '3')
-#calling a method in the child clas
-user_1.show_privileges()
+        self.privileges = Privileges()
